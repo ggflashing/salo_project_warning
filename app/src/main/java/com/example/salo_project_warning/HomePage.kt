@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -94,7 +95,7 @@ fun HomePage(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues = paddingValues)
-                .background(Color(0xFFB80399), shape = RoundedCornerShape(20.dp))
+                .background(Color(0xFF1EB803), shape = RoundedCornerShape(20.dp))
                 .padding(36.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
 
@@ -149,7 +150,7 @@ fun HomePage(
                 value = wordViewModel.textFieldState.value,
                 onValueChange = { wordViewModel.onTextFieldChange(it) },
                 label = { Text("Write here...") },
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(24.dp),
                 colors = OutlinedTextFieldDefaults.colors(
 
@@ -168,7 +169,7 @@ fun HomePage(
                     // Очистим после сохранния:
                     imageUri = null
                 },
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFF609362),
                     contentColor = Color.White
@@ -183,7 +184,7 @@ fun HomePage(
             OutlinedButton(
                 onClick = onNavigateToRememberPage,
                 modifier = Modifier
-                    .fillMaxSize(),
+                    .fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.outlinedButtonColors(
                     containerColor = Color(0x6BEDF1ED)),
