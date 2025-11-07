@@ -84,7 +84,9 @@ class WordViewModel : ViewModel() {
         // не сохроняем если текстовое поле пустое, или
         //Поручаем сохранение текста - обьекту ViewModel - если текст есть:
 
-        if (textFieldState.value.isBlank()) return
+        if (textFieldState.value.isBlank())
+            return
+
         viewModelScope.launch {
             if (text.isBlank()) {
                 Toast.makeText(context, "Model cannot be empty", Toast.LENGTH_LONG).show()
@@ -96,7 +98,9 @@ class WordViewModel : ViewModel() {
                 // в окне textFieldState
 
                 val currentListJson = preferences[wordsKey] ?: "[]"
+
                 val token = object : TypeToken<MutableList<WordItem>>() {}.type
+
                 val currentList = (gson.fromJson<Any?>(currentListJson,token)
                         as? MutableList<WordItem>) ?: mutableListOf()
 

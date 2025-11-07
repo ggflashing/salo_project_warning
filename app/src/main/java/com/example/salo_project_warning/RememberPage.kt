@@ -19,6 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.salo_project_warning.models.WordItem
 
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
@@ -28,6 +29,7 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 fun RememberPage(
     // Функция для возврата назад
     onNavigateBack: () -> Unit,
+
     //вызов экземплера класса WordViewModel
     //для вытягивания данных из локального хранилища DataStore
     wordViewModel: WordViewModel = viewModel()
@@ -74,6 +76,7 @@ fun RememberPage(
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ){
                 items(words_list){wordItem ->
+                    WordItem(wordItem = wordItem)
 
 
                 }

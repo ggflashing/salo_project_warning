@@ -60,7 +60,9 @@ fun HomePage(
 ) {
     val context = LocalContext.current
 
-    var imageUri by remember { mutableStateOf<Uri?>(null) }
+    var imageUri by remember {
+        mutableStateOf<Uri?>(null)
+    }
 
     val galleryLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
@@ -69,7 +71,8 @@ fun HomePage(
         }
     )
 
-    val permissionRequest = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    val permissionRequest =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
 
         //На android 13 (API 33) и выше используем это разрешение
         Manifest.permission.READ_MEDIA_IMAGES
